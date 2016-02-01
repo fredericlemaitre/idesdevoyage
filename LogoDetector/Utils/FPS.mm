@@ -24,6 +24,7 @@ static long long last;
     struct timeval t;
     gettimeofday(&t, NULL);
     
+    // tv_usec member counts milliseconds, but rolls back to 0 every second
     long long now = (((long long) t.tv_sec) * 1000) + (((long long) t.tv_usec) / 1000);
     
     int result = (int)(1000.0 / (now - last));
