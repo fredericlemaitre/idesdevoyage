@@ -27,10 +27,16 @@
 #define W (480)
 #define H (640)
 
+//#define OPTIMIZE_FRAME
+#define NB_SKIP_FRAME 4
+
 @interface CameraViewController()
 {
     CvVideoCamera *camera;
     BOOL started;
+    
+    cv::Rect lastFound;
+    int counterOptimizeFrame;
 }
 
 @end
@@ -49,9 +55,12 @@
     camera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     camera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
     camera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    camera.defaultFPS = 30;
+    camera.defaultFPS = 25;
     camera.grayscaleMode = NO;
     camera.delegate = self;
+    
+    lastFound = cv::Rect(0, 0, W, H);
+    counterOptimizeFrame = 0;
     
     started = NO;
 }
@@ -103,16 +112,32 @@
 {    
     if (!started) { [FPS draw: image]; return; }
     
+#ifdef OPTIMIZE_FRAME
+    ++counterOptimizeFrame;
+    
+    if(counterOptimizeFrame < NB_SKIP_FRAME)
+    {
+        if (lastFound != cv::Rect(0,0,0,0)) {
+            cv::rectangle(image, lastFound, GREEN, 3);
+        }
+       
+        [FPS draw: image];
+        return;
+    }
+    counterOptimizeFrame = 0;
+#endif
+    
+    
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
   
     
     std::vector<std::vector<cv::Point>> msers;
     [[MSERManager sharedInstance] detectRegions: gray intoVector: msers];
-    if (msers.size() == 0) { return; };
+    if (msers.size() == 0) { [FPS draw: image]; return; };
     
     std::vector<cv::Point> *bestMser = nil;
-    double bestPoint = 10.0;
+    double bestPoint = 0.0;
     
     std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser) 
     {
@@ -123,7 +148,7 @@
             if([[MLManager sharedInstance] isToptalLogo: feature] )
             {
                 double tmp = [[MLManager sharedInstance] distance: feature ];
-                if ( bestPoint > tmp ) {
+                if ( bestPoint==0 || bestPoint > tmp ) {
                     bestPoint = tmp;
                     bestMser = &mser;
                 }
@@ -144,14 +169,16 @@
 
     if (bestMser)
     {
-        NSLog(@"minDist: %f", bestPoint);
+        //NSLog(@"minDist: %f", bestPoint);
                 
         cv::Rect bound = cv::boundingRect(*bestMser);
+        lastFound = bound;
         cv::rectangle(image, bound, GREEN, 3);
     }
     else 
     {
-        cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
+        //cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
+        lastFound = cv::Rect(0, 0, 0, 0);
     }
 
 #if DEBUG
