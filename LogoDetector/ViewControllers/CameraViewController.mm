@@ -49,15 +49,11 @@
     camera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     camera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
     camera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    camera.defaultFPS = 20;
+    camera.defaultFPS = 30;
     camera.grayscaleMode = NO;
     camera.delegate = self;
     
     started = NO;
-    
-    
-    //FLE
-    started = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -117,12 +113,6 @@
     
     std::vector<cv::Point> *bestMser = nil;
     double bestPoint = 10.0;
-    
-    
-    //FLE
-    [FPS draw: image];
-    return;
-    //FLE
     
     std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser) 
     {
