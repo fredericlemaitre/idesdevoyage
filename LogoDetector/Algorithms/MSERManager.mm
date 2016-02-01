@@ -46,7 +46,7 @@ cv::MserFeatureDetector mserDetector;
         int maxEvolution = 200;         //! for color image, the evolution steps
         double areaThreshold = 1.01;    //! the area threshold to cause re-initialize
         double minMargin = 0.003;       //! ignore too small margin
-        int edgeBlurSize = 0;           //! the aperture size for edge blur
+        int edgeBlurSize = 5;           //! the aperture size for edge blur
 
         mserDetector = cv::MserFeatureDetector(
                                                delta, minArea, maxArea, 
