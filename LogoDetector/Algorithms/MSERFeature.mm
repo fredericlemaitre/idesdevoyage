@@ -15,7 +15,7 @@
 
 @implementation MSERFeature
 
--(double) distace: (MSERFeature *) other
+-(double) distance: (MSERFeature *) other
 {
     return 
     (self.numberOfHoles == other.numberOfHoles ? 1 : 10) * 

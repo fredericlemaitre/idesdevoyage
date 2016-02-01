@@ -78,7 +78,7 @@
 
 - (double) distance: (MSERFeature *) feature
 {
-    return [self.logoTemplate distace: feature];
+    return [self.logoTemplate distance: feature];
 }
 
 - (BOOL) isToptalLogo: (MSERFeature *) feature;
