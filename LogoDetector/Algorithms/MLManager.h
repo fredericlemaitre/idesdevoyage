@@ -29,6 +29,11 @@
 - (void) learn: (UIImage *) templateImage;
 
 /*
+ Retrieve the biggest MSER in the templateImage
+ */
+- (MSERFeature *) extractMSER:(UIImage*) templateImage;
+
+/*
  Sum of differences between logo feature and given feature
  */
 - (double) distance: (MSERFeature *) feature;

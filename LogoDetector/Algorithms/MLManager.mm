@@ -48,32 +48,41 @@
 
 - (void) learn: (UIImage *) templateImage;
 {
+    //remember the template
+    self.logoTemplate = [self extractMSER:templateImage];
+    
+    //store the feature
+    [self storeTemplate];
+}
+
+
+- (MSERFeature *) extractMSER:(UIImage *) templateImage {
+    
     cv::Mat logo = [ImageUtils cvMatFromUIImage: templateImage];
     
     //get gray image
     cv::Mat gray;
     cvtColor(logo, gray, CV_BGRA2GRAY);
     
-    //mser with maximum area is 
+    //mser with maximum area is
     std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
-
+    
     //get 4 vertices of the maxMSER minrect
-    cv::RotatedRect rect = cv::minAreaRect(maxMser);    
+    cv::RotatedRect rect = cv::minAreaRect(maxMser);
     cv::Point2f points[4];
     rect.points(points);
-
+    
     //normalize image
     cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
     cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
-
+    
     //get maxMser from normalized image
     std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
     
     //remember the template
-    self.logoTemplate = [[MSERManager sharedInstance] extractFeature: &normalizedMser];
+    return [[MSERManager sharedInstance] extractFeature: &normalizedMser];
+
     
-    //store the feature
-    [self storeTemplate];
 }
 
 - (double) distance: (MSERFeature *) feature
