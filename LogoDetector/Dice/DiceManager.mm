@@ -13,6 +13,7 @@
 
 
 
+
 @implementation DiceManager
 
 + (DiceManager *) sharedInstance
@@ -39,6 +40,11 @@
 -(BOOL)isDice1Detected:(MSERFeature *)feature {
     return [self.dice1 isDiceDetected:feature];
 }
+
+-(int)getDice1FaceDetected {
+    return self.dice1.faceDetected;
+}
+
 
 // return the face detected [1-6] If 0 => no detection
 -(int)getDice1FaceDetected:(std::vector<std::vector<cv::Point>> &) msers {

@@ -21,6 +21,8 @@
 @property NSMutableArray * img;
 // MSRfeature for each face;
 @property NSMutableArray * msr;
+// current face detected (0 if none)
+@property int faceDetected;
 
 /*
  init dice with pictures for each face

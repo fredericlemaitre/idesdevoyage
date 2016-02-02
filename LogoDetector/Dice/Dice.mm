@@ -15,6 +15,8 @@
 
 - (id) fillWithAray:(NSArray*)arr {
 
+    self.faceDetected = 0;
+    
     self.pictures = [arr copy];
     
     // load UIImages
@@ -79,7 +81,8 @@
         BOOL bRet = [self isDetected:feature forFace:k];
         if (bRet) {
             NSLog(@"dice 1 detected for face %d",k);
-         return YES;
+            self.faceDetected = k;
+            return YES;
         }
     }
     return NO;

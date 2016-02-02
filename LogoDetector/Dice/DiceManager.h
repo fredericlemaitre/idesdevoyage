@@ -9,6 +9,7 @@
 #ifndef LogoDetector_DiceManager_h
 #define LogoDetector_DiceManager_h
 
+#import <UIKit/UIKit.h>
 #import "Dice.h"
 
 
@@ -27,6 +28,8 @@
 - (void) initDices;
 
 -(BOOL)isDice1Detected:(MSERFeature *)feature;
+-(int)getDice1FaceDetected;
+
 
 @end
 

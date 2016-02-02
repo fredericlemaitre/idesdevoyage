@@ -147,7 +147,7 @@
                       {
                           if([[DiceManager sharedInstance] isDice1Detected:feature] )
                           {
-                              NSLog(@"dice 1 detected");
+                              NSLog(@"dice 1 detected for face %d", [[DiceManager sharedInstance] getDice1FaceDetected]);
                               bestMser = &mser;
                               cv::Rect bound = cv::boundingRect(*bestMser);
                               lastFound = bound;
@@ -167,6 +167,7 @@
                           //[ImageUtils drawMser: &mser intoImage: &image withColor: BLUE];
                       }
       });
+  
     
 #if DEBUG
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
