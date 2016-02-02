@@ -90,41 +90,47 @@
     return [self.logoTemplate distance: feature];
 }
 
-- (BOOL) isToptalLogo: (MSERFeature *) feature;
-{
-    if (_logoTemplate.numberOfHoles != feature.numberOfHoles) { 
-        return NO; 
+
+-(BOOL) isStored:(MSERFeature *)stored matchWith:(MSERFeature *) feature {
+    if (stored.numberOfHoles != feature.numberOfHoles) {
+        return NO;
     }
     
-    if ( fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate) > 0.05) { // 0.1) {
+    if ( fabs(stored.convexHullAreaRate - feature.convexHullAreaRate) > 0.05) { // 0.1) {
         //NSLog(@"convexHullAreaRate \t\t\t\t %f", fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate));
         return NO;
     }
-    if ( fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate) > 0.05) { // 0.1) {
+    if ( fabs(stored.minRectAreaRate - feature.minRectAreaRate) > 0.05) { // 0.1) {
         //NSLog(@"minRectAreaRate \t\t\t\t %f", fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate));
         return NO;
     }
-    if ( fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate) > 0.02) {
+    if ( fabs(stored.skeletLengthRate - feature.skeletLengthRate) > 0.02) {
         //NSLog(@"skeletLengthRate \t\t\t\t %f", fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate));
         return NO;
     }
-    if ( fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate) > 0.1) {//0.2) {
+    if ( fabs(stored.contourAreaRate - feature.contourAreaRate) > 0.1) {//0.2) {
         //NSLog(@"contourAreaRate \t\t\t\t %f", fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate));
         return NO;
     }
-
-//    NSLog(@"------------------------------------------");
-//    NSLog(@"%@", [_logoTemplate description]);
-//    NSLog(@"%@", [feature description]);
-//    NSLog(@"%@", [feature toString]);
-//    NSLog(@"%f \t %f \t %f \t %f", 
-//          fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate),
-//          fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate),
-//          fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate),
-//          fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate)
-//          );
+    
+    //    NSLog(@"------------------------------------------");
+    //    NSLog(@"%@", [_logoTemplate description]);
+    //    NSLog(@"%@", [feature description]);
+    //    NSLog(@"%@", [feature toString]);
+    //    NSLog(@"%f \t %f \t %f \t %f",
+    //          fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate),
+    //          fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate),
+    //          fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate),
+    //          fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate)
+    //          );
     
     return YES;
+
+}
+
+- (BOOL) isToptalLogo: (MSERFeature *) feature;
+{
+    return [self isStored:_logoTemplate matchWith:feature];
 }
 
 #pragma mark - helper

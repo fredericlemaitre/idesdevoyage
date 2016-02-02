@@ -37,10 +37,10 @@ cv::MserFeatureDetector mserDetector;
     {
         /* THESE ARE ALL DEFAULT VALUES */
         int delta = 5;                  //! delta, in the code, it compares (size_{i}-size_{i-delta})/size_{i-delta}
-        //int minArea = 5120;            //! (640 * 480 / 60) ... max mser is 1/60 of the whole image
-        //int maxArea = 10480;            //! (640 * 480 / 15) ... max mser is 1/15 of the whole image
-        int minArea = 60;               //! prune the area which bigger than maxArea
-        int maxArea = 14400;            //! prune the area which smaller than minArea
+        int minArea = 120;            //! (640 * 480 / 60) ... max mser is 1/60 of the whole image
+        int maxArea = 14400;            //! (640 * 480 / 15) ... max mser is 1/15 of the whole image
+        //int minArea = 60;               //! prune the area which bigger than maxArea
+        //int maxArea = 14400;            //! prune the area which smaller than minArea
         double maxVariation = 0.25;     //! prune the area have simliar size to its children
         double minDiversity = 0.2;      //! trace back to cut off mser with diversity < min_diversity
         int maxEvolution = 200;         //! for color image, the evolution steps

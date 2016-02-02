@@ -29,7 +29,7 @@
 
 //#define OPTIMIZE_FRAME
 #define NB_SKIP_FRAME 4
-//#define SHOW_MSR
+#define SHOW_MSR
 
 @interface CameraViewController()
 {
@@ -63,7 +63,7 @@
     lastFound = cv::Rect(0, 0, W, H);
     counterOptimizeFrame = 0;
     
-    started = NO;
+    started = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -161,9 +161,10 @@
             else
             {
                 //NSLog(@"%@", [feature toString]);
-                
-                //[ImageUtils drawMser: &mser intoImage: &image withColor: RED];
+#ifdef SHOW_MSR
+                [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
             }
+#endif
         }
         else 
         {

@@ -26,7 +26,8 @@
 
     if ([self isFirstStart])
     {   
-        [[MLManager sharedInstance] learn: [UIImage imageNamed: @"toptal logo"]];
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"toptal logo"]];
+        [[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_6-soleil"]];
         [[DiceManager sharedInstance] initDices];
         [self setFirstStartFlag];
     }

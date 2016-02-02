@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MSERFeature.h"
 
 @interface Dice : NSObject
 
@@ -30,7 +31,13 @@
 
 -(UIImage*)getUIImageForFace:(int)face;
 
+-(MSERFeature*)getMSRForFace:(int)face;
 
+-(BOOL)isDetected:(MSERFeature *)feature forFace:(int)face;
+
+-(BOOL)isDiceDetected:(MSERFeature *)feature;
+
+-(double) distance: (MSERFeature *)feature forFace:(int)face;
 
 @end
 

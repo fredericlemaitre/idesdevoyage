@@ -43,4 +43,9 @@
  */
 - (BOOL) isToptalLogo: (MSERFeature *) feature;
 
+/*
+ Returns true if the given feature is similar to the first one (stored)
+ */
+-(BOOL) isStored:(MSERFeature *)stored matchWith:(MSERFeature *) feature ;
+
 @end

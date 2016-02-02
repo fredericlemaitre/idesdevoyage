@@ -26,6 +26,8 @@
  */
 - (void) initDices;
 
+-(BOOL)isDice1Detected:(MSERFeature *)feature;
+
 @end
 
 

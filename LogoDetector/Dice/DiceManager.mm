@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "DiceManager.h"
+#import "MSERManager.h"
 
 
 
@@ -33,13 +34,41 @@
     NSArray *array1 =[NSArray arrayWithObjects:@"un",@"deux",@"trois",@"quatre",@"cinq",@"six", nil];
     self.dice1 = [[[Dice alloc] init] fillWithAray:array1];
     
-    NSLog(@"picture for face 2 : %@", [self.dice1 getPictureForFace:2]);
-    
-    // STORE PICTURES
-    
-    
-    
-    
 }
+
+-(BOOL)isDice1Detected:(MSERFeature *)feature {
+    return [self.dice1 isDiceDetected:feature];
+}
+
+// return the face detected [1-6] If 0 => no detection
+-(int)getDice1FaceDetected:(std::vector<std::vector<cv::Point>> &) msers {
+    
+    std::vector<cv::Point> *bestMser = nil;
+    double bestPoint = 0.0;
+    int bestface = 0;
+    
+    std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser)
+    {
+        MSERFeature *feature = [[MSERManager sharedInstance] extractFeature: &mser];
+        if(feature != nil)
+        {
+            for(int k=1;k<=6;++k) {
+                if ([self.dice1 isDetected:feature forFace:k]) {
+                    double tmp = [self.dice1 distance: feature forFace:k ];
+                    if ( bestPoint==0 || bestPoint > tmp ) {
+                        bestPoint = tmp;
+                        bestMser = &mser;
+                        bestface = k;
+                    }
+
+                }
+            }
+            
+        }
+    });
+    
+    return bestface;
+}
+
 
 @end
