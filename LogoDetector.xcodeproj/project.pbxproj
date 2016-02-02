@@ -40,6 +40,15 @@
 		BF9CC0221C61174800BFE006 /* select-ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0211C61174800BFE006 /* select-ok@2x.png */; };
 		BF9CC0241C61174D00BFE006 /* select-vide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0231C61174D00BFE006 /* select-vide@2x.png */; };
 		BF9CC0261C61191900BFE006 /* img-plage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0251C61191900BFE006 /* img-plage@2x.png */; };
+		BF9CC02A1C611D1300BFE006 /* bg-criteres@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0291C611D1300BFE006 /* bg-criteres@2x.png */; };
+		BF9CC02C1C611DB600BFE006 /* Retour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC02B1C611DB600BFE006 /* Retour@2x.png */; };
+		BF9CC02E1C611DDA00BFE006 /* Insolite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC02D1C611DDA00BFE006 /* Insolite@2x.png */; };
+		BF9CC0301C611DE100BFE006 /* Montagne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC02F1C611DE100BFE006 /* Montagne@2x.png */; };
+		BF9CC0321C611DE800BFE006 /* Nature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0311C611DE800BFE006 /* Nature@2x.png */; };
+		BF9CC0341C611DEE00BFE006 /* Plage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0331C611DEE00BFE006 /* Plage@2x.png */; };
+		BF9CC0361C611DF400BFE006 /* Soleil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0351C611DF400BFE006 /* Soleil@2x.png */; };
+		BF9CC0381C611DFA00BFE006 /* Ville@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0371C611DFA00BFE006 /* Ville@2x.png */; };
+		BF9CC03A1C611E1A00BFE006 /* BTN-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +100,15 @@
 		BF9CC0211C61174800BFE006 /* select-ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-ok@2x.png"; sourceTree = "<group>"; };
 		BF9CC0231C61174D00BFE006 /* select-vide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-vide@2x.png"; sourceTree = "<group>"; };
 		BF9CC0251C61191900BFE006 /* img-plage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-plage@2x.png"; sourceTree = "<group>"; };
+		BF9CC0291C611D1300BFE006 /* bg-criteres@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-criteres@2x.png"; sourceTree = "<group>"; };
+		BF9CC02B1C611DB600BFE006 /* Retour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Retour@2x.png"; sourceTree = "<group>"; };
+		BF9CC02D1C611DDA00BFE006 /* Insolite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Insolite@2x.png"; sourceTree = "<group>"; };
+		BF9CC02F1C611DE100BFE006 /* Montagne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Montagne@2x.png"; sourceTree = "<group>"; };
+		BF9CC0311C611DE800BFE006 /* Nature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nature@2x.png"; sourceTree = "<group>"; };
+		BF9CC0331C611DEE00BFE006 /* Plage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plage@2x.png"; sourceTree = "<group>"; };
+		BF9CC0351C611DF400BFE006 /* Soleil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soleil@2x.png"; sourceTree = "<group>"; };
+		BF9CC0371C611DFA00BFE006 /* Ville@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ville@2x.png"; sourceTree = "<group>"; };
+		BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN-2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +261,15 @@
 		BF9CC01E1C61147F00BFE006 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */,
+				BF9CC0371C611DFA00BFE006 /* Ville@2x.png */,
+				BF9CC0351C611DF400BFE006 /* Soleil@2x.png */,
+				BF9CC0331C611DEE00BFE006 /* Plage@2x.png */,
+				BF9CC0311C611DE800BFE006 /* Nature@2x.png */,
+				BF9CC02F1C611DE100BFE006 /* Montagne@2x.png */,
+				BF9CC02D1C611DDA00BFE006 /* Insolite@2x.png */,
+				BF9CC02B1C611DB600BFE006 /* Retour@2x.png */,
+				BF9CC0291C611D1300BFE006 /* bg-criteres@2x.png */,
 				BF9CC0251C61191900BFE006 /* img-plage@2x.png */,
 				BF9CC0231C61174D00BFE006 /* select-vide@2x.png */,
 				BF9CC0211C61174800BFE006 /* select-ok@2x.png */,
@@ -313,9 +340,18 @@
 				AD88C5AB1B0343C30027B0A1 /* Main.storyboard in Resources */,
 				BF9CC0261C61191900BFE006 /* img-plage@2x.png in Resources */,
 				AD88C5B01B0343C30027B0A1 /* LaunchScreen.xib in Resources */,
+				BF9CC0361C611DF400BFE006 /* Soleil@2x.png in Resources */,
+				BF9CC02C1C611DB600BFE006 /* Retour@2x.png in Resources */,
+				BF9CC0381C611DFA00BFE006 /* Ville@2x.png in Resources */,
 				AD88C5AD1B0343C30027B0A1 /* Images.xcassets in Resources */,
+				BF9CC0301C611DE100BFE006 /* Montagne@2x.png in Resources */,
 				BF9CC0241C61174D00BFE006 /* select-vide@2x.png in Resources */,
+				BF9CC02E1C611DDA00BFE006 /* Insolite@2x.png in Resources */,
+				BF9CC0321C611DE800BFE006 /* Nature@2x.png in Resources */,
+				BF9CC03A1C611E1A00BFE006 /* BTN-2@2x.png in Resources */,
+				BF9CC02A1C611D1300BFE006 /* bg-criteres@2x.png in Resources */,
 				BF9CC0201C61148B00BFE006 /* BTN@2x.png in Resources */,
+				BF9CC0341C611DEE00BFE006 /* Plage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
