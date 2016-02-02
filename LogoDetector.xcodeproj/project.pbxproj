@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD88C59C1B0343C30027B0A1 /* LogoDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD88C59C1B0343C30027B0A1 /* I-Dés.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I-Dés.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD88C5A01B0343C30027B0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD88C5A11B0343C30027B0A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD88C5A31B0343C30027B0A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		AD88C59D1B0343C30027B0A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD88C59C1B0343C30027B0A1 /* LogoDetector.app */,
+				AD88C59C1B0343C30027B0A1 /* I-Dés.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 			);
 			name = LogoDetector;
 			productName = LogoDetector;
-			productReference = AD88C59C1B0343C30027B0A1 /* LogoDetector.app */;
+			productReference = AD88C59C1B0343C30027B0A1 /* I-Dés.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -502,7 +502,7 @@
 				GCC_PREFIX_HEADER = LogoDetector/PrefixHeader.pch;
 				INFOPLIST_FILE = LogoDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "I-Dés";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -522,7 +522,7 @@
 				GCC_PREFIX_HEADER = LogoDetector/PrefixHeader.pch;
 				INFOPLIST_FILE = LogoDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "I-Dés";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
