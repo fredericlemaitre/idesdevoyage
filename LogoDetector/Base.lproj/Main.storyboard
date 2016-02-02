@@ -76,7 +76,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-criteres.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxT-mo-xAf">
-                                <rect key="frame" x="0.0" y="259" width="320" height="136"/>
+                                <rect key="frame" x="0.0" y="419" width="320" height="136"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
