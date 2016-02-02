@@ -40,6 +40,8 @@
     
     cv::Rect lastFound;
     int counterOptimizeFrame;
+    
+    int shownSlot;
 }
 
 @end
@@ -65,7 +67,9 @@
     lastFound = cv::Rect(0, 0, W, H);
     counterOptimizeFrame = 0;
     
+    shownSlot = 0;
     started = YES;
+    self.btn.enabled = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -117,14 +121,25 @@
 
 -(void)showImageForDice1:(int)face {
     
-    self.slot1.image =[UIImage imageNamed:@"select-ok"];
+    if (face == shownSlot) return;
+    shownSlot = face;
     
-    self.dice1.image = [[DiceManager sharedInstance] getDiceImageForFace:face];
-    
-    [self.loading stopAnimating];
+    dispatch_async(dispatch_get_main_queue(), ^{
   
-    [self.view setNeedsDisplay];
-    [self.view reloadInputViews];
+        self.slot1.image = [UIImage imageNamed:@"select-ok.png"];
+        self.dice1.image = [[DiceManager sharedInstance] getDiceImageForFace:face];
+        
+        self.btn.enabled = YES;
+        
+        CALayer *layer = self.view.layer;
+        [layer setNeedsDisplay];
+        [layer displayIfNeeded];
+        
+        [self.view setNeedsDisplay];
+        
+    
+    });
+    
     
 }
 

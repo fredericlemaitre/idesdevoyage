@@ -46,11 +46,14 @@
                                             </segue>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-AA-SR4">
+                                        <rect key="frame" x="29" y="34" width="62" height="57"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-criteres.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxT-mo-xAf">
-                                <rect key="frame" x="0.0" y="416" width="320" height="195"/>
+                                <rect key="frame" x="0.0" y="259" width="320" height="136"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +71,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btn" destination="UCo-EX-3QG" id="nmD-Sq-693"/>
+                        <outlet property="dice1" destination="DIE-AA-SR4" id="CwB-tp-tMK"/>
                         <outlet property="img" destination="4Vz-cE-do7" id="cmT-OE-9GZ"/>
                         <outlet property="loading" destination="9AT-G0-vS9" id="v9B-hv-pY6"/>
                         <outlet property="slot1" destination="jxu-Dh-CyR" id="mQ1-ST-rjk"/>
