@@ -27,7 +27,12 @@
     if ([self isFirstStart])
     {   
         //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"toptal logo"]];
-        [[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_6-soleil"]];
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_1-plage"]];
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_2-montagne"]]; // KO
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_3-ville"]]; // OK
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_4-nature"]]; // OK
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_5-insolite"]]; // KO
+        //[[MLManager sharedInstance] learn: [UIImage imageNamed: @"1_6-soleil"]]; // KO
         [[DiceManager sharedInstance] initDices];
         [self setFirstStartFlag];
     }

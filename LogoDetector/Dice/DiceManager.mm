@@ -31,7 +31,7 @@
     NSLog(@"init dices");
     
     // DICE 1
-    NSArray *array1 =[NSArray arrayWithObjects:@"un",@"deux",@"trois",@"quatre",@"cinq",@"six", nil];
+    NSArray *array1 =[NSArray arrayWithObjects:@"1_1-plage",@"1_2-montagne",@"1_3-ville",@"1_4-nature",@"1_5-insolite",@"1_6-soleil", nil];
     self.dice1 = [[[Dice alloc] init] fillWithAray:array1];
     
 }
@@ -66,6 +66,7 @@
             
         }
     });
+    
     
     return bestface;
 }

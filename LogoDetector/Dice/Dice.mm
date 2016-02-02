@@ -21,8 +21,10 @@
     self.img = [[NSMutableArray alloc] initWithCapacity:6];
     for (int k=1;k<=6; ++k)
     {
-        [self.img addObject:[UIImage imageNamed:@"toptal logo"]];
-        //[self.img addObject:[UIImage imageNamed:[self getPictureForFace:k]]];
+        //[self.img addObject:[UIImage imageNamed:@"toptal logo"]];
+        NSLog(@"loading image %@",[self getPictureForFace:k]);
+        [self.img addObject:[UIImage imageNamed:[self getPictureForFace:k]]];
+        NSLog(@"loading ok");
     }
     
     // MSR
@@ -75,7 +77,10 @@
 -(BOOL)isDiceDetected:(MSERFeature *)feature {
     for(int k=1; k<=6; ++k) {
         BOOL bRet = [self isDetected:feature forFace:k];
-        if (bRet) return YES;
+        if (bRet) {
+            NSLog(@"dice 1 detected for face %d",k);
+         return YES;
+        }
     }
     return NO;
 }

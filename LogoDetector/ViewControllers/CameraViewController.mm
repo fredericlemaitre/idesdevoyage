@@ -18,6 +18,7 @@
 #import "MLManager.h"
 #import "ImageUtils.h"
 #import "GeometryUtil.h"
+#import "DiceManager.h"
 
 //#ifdef DEBUG
 #import "FPS.h"
@@ -30,6 +31,7 @@
 //#define OPTIMIZE_FRAME
 #define NB_SKIP_FRAME 4
 #define SHOW_MSR
+//#define INITIAL_CODE
 
 @interface CameraViewController()
 {
@@ -56,7 +58,7 @@
     camera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     camera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
     camera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    camera.defaultFPS = 25;
+    camera.defaultFPS = 20;
     camera.grayscaleMode = NO;
     camera.delegate = self;
     
@@ -128,10 +130,57 @@
     counterOptimizeFrame = 0;
 #endif
     
+#ifndef INITIAL_CODE
     
+    // ID
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
-  
+    std::vector<std::vector<cv::Point>> msers;
+    [[MSERManager sharedInstance] detectRegions: gray intoVector: msers];
+    std::vector<cv::Point> *bestMser = nil;
+   
+    std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser)
+      {
+                      MSERFeature *feature = [[MSERManager sharedInstance] extractFeature: &mser];
+                      
+                      if(feature != nil)
+                      {
+                          if([[DiceManager sharedInstance] isDice1Detected:feature] )
+                          {
+                              NSLog(@"dice 1 detected");
+                              bestMser = &mser;
+                              cv::Rect bound = cv::boundingRect(*bestMser);
+                              lastFound = bound;
+                              cv::rectangle(image, bound, GREEN, 3);
+                              
+                              
+                              //[ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
+                          }
+                          else
+                          {
+                              [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
+                          }
+                          
+                      }
+                      else 
+                      {
+                          //[ImageUtils drawMser: &mser intoImage: &image withColor: BLUE];
+                      }
+      });
+    
+#if DEBUG
+    const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
+    cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
+#endif
+    [FPS draw: image];
+
+#endif
+    
+    
+#ifdef INITIAL_CODE
+    cv::Mat gray;
+    cvtColor(image, gray, CV_BGRA2GRAY);
+   
     
     std::vector<std::vector<cv::Point>> msers;
     [[MSERManager sharedInstance] detectRegions: gray intoVector: msers];
@@ -163,8 +212,9 @@
                 //NSLog(@"%@", [feature toString]);
 #ifdef SHOW_MSR
                 [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
-            }
 #endif
+            }
+
         }
         else 
         {
@@ -175,7 +225,7 @@
     if (bestMser)
     {
         //NSLog(@"minDist: %f", bestPoint);
-                
+
         cv::Rect bound = cv::boundingRect(*bestMser);
         lastFound = bound;
         cv::rectangle(image, bound, GREEN, 3);
@@ -192,6 +242,7 @@
 #endif
     
     [FPS draw: image];
+#endif // INITIAL_CODE
 }
 
 @end
