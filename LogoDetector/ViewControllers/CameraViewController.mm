@@ -29,6 +29,7 @@
 
 //#define OPTIMIZE_FRAME
 #define NB_SKIP_FRAME 4
+//#define SHOW_MSR
 
 @interface CameraViewController()
 {
@@ -153,11 +154,14 @@
                     bestMser = &mser;
                 }
                 
-                //[ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
+#ifdef SHOW_MSR
+                [ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
+#endif
             }
-            else 
+            else
             {
                 //NSLog(@"%@", [feature toString]);
+                
                 //[ImageUtils drawMser: &mser intoImage: &image withColor: RED];
             }
         }

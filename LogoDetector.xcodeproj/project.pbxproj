@@ -33,6 +33,8 @@
 		ADF03E221B12812E00115352 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF03E211B12812E00115352 /* opencv2.framework */; };
 		ADF65B541B050A7C00CCB451 /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADF65B531B050A7C00CCB451 /* MSERFeature.mm */; };
 		ADFEEAC71B3EC2BF00DAD2A6 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADFEEAC61B3EC2BF00DAD2A6 /* GeometryUtil.mm */; };
+		BF9CC0161C60B38900BFE006 /* DiceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF9CC0151C60B38900BFE006 /* DiceManager.mm */; };
+		BF9CC0191C60B8AB00BFE006 /* Dice.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF9CC0181C60B8AB00BFE006 /* Dice.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,10 @@
 		ADF65B531B050A7C00CCB451 /* MSERFeature.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MSERFeature.mm; sourceTree = "<group>"; };
 		ADFEEAC51B3EC2BF00DAD2A6 /* GeometryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryUtil.h; sourceTree = "<group>"; };
 		ADFEEAC61B3EC2BF00DAD2A6 /* GeometryUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryUtil.mm; sourceTree = "<group>"; };
+		BF9CC0151C60B38900BFE006 /* DiceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DiceManager.mm; path = Dice/DiceManager.mm; sourceTree = "<group>"; };
+		BF9CC0171C60B76900BFE006 /* DiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DiceManager.h; path = Dice/DiceManager.h; sourceTree = "<group>"; };
+		BF9CC0181C60B8AB00BFE006 /* Dice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Dice.mm; path = Dice/Dice.mm; sourceTree = "<group>"; };
+		BF9CC01A1C60B94100BFE006 /* Dice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dice.h; path = Dice/Dice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 		AD88C59E1B0343C30027B0A1 /* LogoDetector */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CC0141C60B30100BFE006 /* Dice */,
 				AD88C5A31B0343C30027B0A1 /* AppDelegate.h */,
 				AD88C5A41B0343C30027B0A1 /* AppDelegate.m */,
 				AD88C5A91B0343C30027B0A1 /* Main.storyboard */,
@@ -208,6 +215,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		BF9CC0141C60B30100BFE006 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				BF9CC0151C60B38900BFE006 /* DiceManager.mm */,
+				BF9CC0171C60B76900BFE006 /* DiceManager.h */,
+				BF9CC0181C60B8AB00BFE006 /* Dice.mm */,
+				BF9CC01A1C60B94100BFE006 /* Dice.h */,
+			);
+			name = Dice;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,10 +303,12 @@
 				AD88C5EA1B03865D0027B0A1 /* RoundButton.m in Sources */,
 				AD9D28001B0647D10044CDAE /* ImageUtils.mm in Sources */,
 				ADF65B541B050A7C00CCB451 /* MSERFeature.mm in Sources */,
+				BF9CC0191C60B8AB00BFE006 /* Dice.mm in Sources */,
 				AD88C5EE1B0393E60027B0A1 /* MSERManager.mm in Sources */,
 				ADF03E201B1280AF00115352 /* FPS.mm in Sources */,
 				AD9D27FC1B062D060044CDAE /* MLManager.mm in Sources */,
 				AD88C5C81B0344A10027B0A1 /* CameraViewController.mm in Sources */,
+				BF9CC0161C60B38900BFE006 /* DiceManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

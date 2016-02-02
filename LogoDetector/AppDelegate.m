@@ -14,6 +14,8 @@
 #import "AppDelegate.h"
 
 #import "MLManager.h"
+#import "DiceManager.h"
+
 
 #define FIRST_START_KEY @"FIRST_START"
 
@@ -24,7 +26,8 @@
 
     if ([self isFirstStart])
     {   
-        [[MLManager sharedInstance] learn: [UIImage imageNamed: @"toptal logo"]];        
+        [[MLManager sharedInstance] learn: [UIImage imageNamed: @"toptal logo"]];
+        [[DiceManager sharedInstance] initDices];
         [self setFirstStartFlag];
     }
     
@@ -35,12 +38,12 @@
 
 - (BOOL) isFirstStart
 {
-#if DEBUG
+//#if DEBUG
     return YES;
-#else    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
-    return [defaults objectForKey: FIRST_START_KEY] != nil;
-#endif
+//#else
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   // return [defaults objectForKey: FIRST_START_KEY] != nil;
+//#endif
 }
 
 - (void) setFirstStartFlag
