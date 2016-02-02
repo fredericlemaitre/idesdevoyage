@@ -37,4 +37,6 @@ extern const cv::Scalar LIGHT_GRAY;
 
 + (std::vector<cv::Point>) maxMser: (cv::Mat *) gray;
 
++ (UIColor *)colorFromHexString:(NSString *)hexString;
+
 @end

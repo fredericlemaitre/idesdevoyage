@@ -13,11 +13,12 @@
 
 @implementation Dice
 
-- (id) fillWithAray:(NSArray*)arr {
+- (id) fillWithAray:(NSArray*)arr andTitles:(NSArray*)tit {
 
     self.faceDetected = 0;
     
     self.pictures = [arr copy];
+    self.titles = [tit copy];
     
     // load UIImages
     self.img = [[NSMutableArray alloc] initWithCapacity:6];
@@ -46,6 +47,13 @@
     if (face<0) return nil;
     if (face>6) return nil;
     return [self.pictures objectAtIndex:(face-1)];
+}
+
+// return title for face n [1-6]
+-(NSString*)getTitleForFace:(int)face {
+    if (face<0) return nil;
+    if (face>6) return nil;
+    return [self.titles objectAtIndex:(face-1)];
 }
 
 // return UIImage for face [1-6]

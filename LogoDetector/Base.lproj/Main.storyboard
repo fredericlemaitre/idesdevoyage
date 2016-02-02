@@ -29,14 +29,14 @@
                                 <rect key="frame" x="-4" y="427" width="320" height="142"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select-vide.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-Dh-CyR">
-                                        <rect key="frame" x="18" y="20" width="83" height="85"/>
+                                        <rect key="frame" x="18" y="38" width="83" height="85"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-G0-vS9">
-                                        <rect key="frame" x="150" y="114" width="20" height="20"/>
-                                    </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-AA-SR4">
+                                        <rect key="frame" x="29" y="54" width="62" height="57"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCo-EX-3QG">
-                                        <rect key="frame" x="109" y="32" width="203" height="50"/>
+                                        <rect key="frame" x="109" y="34" width="203" height="50"/>
                                         <state key="normal" image="BTN.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -46,9 +46,32 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-AA-SR4">
-                                        <rect key="frame" x="29" y="34" width="62" height="57"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xJ-xd-CmC">
+                                        <rect key="frame" x="130" y="34" width="160" height="71"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AT0-FG-GaV">
+                                                <rect key="frame" x="70" y="43" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="SCAN DE VOS DÉS ..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnZ-Dy-ePA">
+                                                <rect key="frame" x="-12" y="0.0" width="193" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.84739977904040398" green="0.84739977904040398" blue="0.84739977904040398" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Montagne" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq2-Tj-nVd">
+                                        <rect key="frame" x="1" y="12" width="121" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="DESTINATION" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUh-fE-dtg">
+                                        <rect key="frame" x="19" y="0.0" width="84" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -73,8 +96,11 @@
                         <outlet property="btn" destination="UCo-EX-3QG" id="nmD-Sq-693"/>
                         <outlet property="dice1" destination="DIE-AA-SR4" id="CwB-tp-tMK"/>
                         <outlet property="img" destination="4Vz-cE-do7" id="cmT-OE-9GZ"/>
-                        <outlet property="loading" destination="9AT-G0-vS9" id="v9B-hv-pY6"/>
+                        <outlet property="loading" destination="AT0-FG-GaV" id="91g-4J-CPL"/>
+                        <outlet property="loadingView" destination="0xJ-xd-CmC" id="DaR-5a-dLr"/>
                         <outlet property="slot1" destination="jxu-Dh-CyR" id="mQ1-ST-rjk"/>
+                        <outlet property="subtitleSlot" destination="Jq2-Tj-nVd" id="t3V-Vt-DCk"/>
+                        <outlet property="titleSlot" destination="sUh-fE-dtg" id="Ff4-cT-9i9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsJ-98-Dwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,5 +163,4 @@
         <image name="bg-criteres.png" width="320" height="195"/>
         <image name="select-vide.png" width="79" height="79"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

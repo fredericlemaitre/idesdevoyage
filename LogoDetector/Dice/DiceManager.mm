@@ -33,7 +33,10 @@
     
     // DICE 1
     NSArray *array1 =[NSArray arrayWithObjects:@"1_1-plage",@"1_2-montagne",@"1_3-ville",@"1_4-nature",@"1_5-insolite",@"1_6-soleil", nil];
-    self.dice1 = [[[Dice alloc] init] fillWithAray:array1];
+    
+    NSArray *arrayTitle1 =[NSArray arrayWithObjects:@"À la plage",@"À la montagne",@"En ville",@"Dans la nature",@"Insolite!",@"Au soleil", nil];
+    
+    self.dice1 = [[[Dice alloc] init] fillWithAray:array1 andTitles:arrayTitle1];
     
 }
 
@@ -49,6 +52,9 @@
     return [self.dice1 getUIImageForFace:face];
 }
 
+-(NSString*)getTitleForFace:(int)face {
+    return [self.dice1 getTitleForFace:face];
+}
 
 // return the face detected [1-6] If 0 => no detection
 -(int)getDice1FaceDetected:(std::vector<std::vector<cv::Point>> &) msers {

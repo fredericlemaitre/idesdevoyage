@@ -19,6 +19,7 @@
 #import "ImageUtils.h"
 #import "GeometryUtil.h"
 #import "DiceManager.h"
+#import "ImageUtils.h"
 
 //#ifdef DEBUG
 #import "FPS.h"
@@ -69,7 +70,11 @@
     
     shownSlot = 0;
     started = YES;
-    self.btn.enabled = NO;
+    self.btn.hidden = YES;
+    self.loadingView.hidden = NO;
+    self.subtitleSlot.hidden = YES;
+    [self.subtitleSlot sizeToFit];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -119,17 +124,27 @@
     
 }
 
+
+
 -(void)showImageForDice1:(int)face {
     
     if (face == shownSlot) return;
     shownSlot = face;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        self.btn.hidden = NO;
+        self.loadingView.hidden = YES;
+
   
         self.slot1.image = [UIImage imageNamed:@"select-ok.png"];
         self.dice1.image = [[DiceManager sharedInstance] getDiceImageForFace:face];
         
-        self.btn.enabled = YES;
+        self.titleSlot.textColor = [ImageUtils colorFromHexString:@"#7ABA1F"];
+        
+        self.subtitleSlot.text = [[DiceManager sharedInstance] getTitleForFace:face];
+        self.subtitleSlot.hidden = NO;
+        self.subtitleSlot.TextAlignment=NSTextAlignmentCenter;
         
         CALayer *layer = self.view.layer;
         [layer setNeedsDisplay];

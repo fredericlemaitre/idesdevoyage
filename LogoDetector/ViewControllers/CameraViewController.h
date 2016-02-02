@@ -22,6 +22,11 @@
 @property (retain, nonatomic) IBOutlet UIImageView *slot1;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
+
+@property (retain, nonatomic) IBOutlet UITextView *titleSlot;
+@property (retain, nonatomic) IBOutlet UITextView *subtitleSlot;
+
 
 
 

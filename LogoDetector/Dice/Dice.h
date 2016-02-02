@@ -17,6 +17,8 @@
 
 // name of images for each face (ex : soleil.png)
 @property NSArray * pictures;
+// titles
+@property NSArray * titles;
 // UIImage for each face;
 @property NSMutableArray * img;
 // MSRfeature for each face;
@@ -27,9 +29,11 @@
 /*
  init dice with pictures for each face
  */
--(id)fillWithAray: (NSArray*) arr;
+-(id)fillWithAray: (NSArray*)arr andTitles:(NSArray*)titles;
 
 -(NSString*)getPictureForFace:(int)face;
+
+-(NSString*)getTitleForFace:(int)face;
 
 -(UIImage*)getUIImageForFace:(int)face;
 

@@ -30,7 +30,7 @@
 -(BOOL)isDice1Detected:(MSERFeature *)feature;
 -(int)getDice1FaceDetected;
 -(UIImage*)getDiceImageForFace:(int)face;
-
+-(NSString*)getTitleForFace:(int)face;
 
 @end
 
