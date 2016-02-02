@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cva-TF-emf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cva-TF-emf">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -28,25 +28,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKq-e8-sun">
                                 <rect key="frame" x="0.0" y="426" width="320" height="142"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbJ-rJ-fZl" customClass="RoundButton">
-                                        <rect key="frame" x="104" y="15" width="112" height="112"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="IbJ-rJ-fZl" secondAttribute="height" multiplier="1:1" id="s31-cE-3yk"/>
-                                        </constraints>
-                                        <state key="normal" title="Start">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-G0-vS9">
+                                        <rect key="frame" x="150" y="114" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCo-EX-3QG">
+                                        <rect key="frame" x="103" y="32" width="203" height="50"/>
+                                        <state key="normal" image="BTN.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btn_TouchUp:" destination="cva-TF-emf" eventType="touchUpInside" id="N2K-G3-YB1"/>
+                                            <segue destination="DLP-nq-tLL" kind="popoverPresentation" popoverAnchorView="UCo-EX-3QG" id="4WU-fG-lM3">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select-vide.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-Dh-CyR">
+                                        <rect key="frame" x="18" y="20" width="83" height="85"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="IbJ-rJ-fZl" firstAttribute="top" secondItem="sKq-e8-sun" secondAttribute="top" constant="15" id="3jh-Ia-gxm"/>
-                                    <constraint firstAttribute="bottom" secondItem="IbJ-rJ-fZl" secondAttribute="bottom" constant="15" id="mUF-MQ-QBV"/>
-                                    <constraint firstAttribute="centerX" secondItem="IbJ-rJ-fZl" secondAttribute="centerX" id="vNJ-FU-v4t"/>
-                                </constraints>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,13 +64,57 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btn" destination="IbJ-rJ-fZl" id="ijV-nP-f39"/>
+                        <outlet property="btn" destination="UCo-EX-3QG" id="nmD-Sq-693"/>
                         <outlet property="img" destination="4Vz-cE-do7" id="cmT-OE-9GZ"/>
+                        <outlet property="loading" destination="9AT-G0-vS9" id="v9B-hv-pY6"/>
+                        <outlet property="slot1" destination="jxu-Dh-CyR" id="mQ1-ST-rjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsJ-98-Dwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="543"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="1l1-uz-Cs1">
+            <objects>
+                <viewController id="DLP-nq-tLL" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oWQ-tc-3KW"/>
+                        <viewControllerLayoutGuide type="bottom" id="mk4-dd-GzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hB2-sk-TOO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img-plage.png" translatesAutoresizingMaskIntoConstraints="NO" id="utg-gA-0Ib">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnr-GH-geV">
+                                <rect key="frame" x="83" y="450" width="154" height="30"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToDices:" destination="DLP-nq-tLL" eventType="touchUpInside" id="cZb-bH-gs7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="close" destination="bnr-GH-geV" id="uyf-rY-uok"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIx-Gz-O0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="543"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="BTN.png" width="203" height="50"/>
+        <image name="img-plage.png" width="320" height="568"/>
+        <image name="select-vide.png" width="79" height="79"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

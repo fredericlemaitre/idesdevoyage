@@ -45,6 +45,10 @@
     return self.dice1.faceDetected;
 }
 
+-(UIImage*)getDiceImageForFace:(int)face {
+    return [self.dice1 getUIImageForFace:face];
+}
+
 
 // return the face detected [1-6] If 0 => no detection
 -(int)getDice1FaceDetected:(std::vector<std::vector<cv::Point>> &) msers {

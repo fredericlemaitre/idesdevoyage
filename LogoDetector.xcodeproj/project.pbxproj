@@ -35,6 +35,11 @@
 		ADFEEAC71B3EC2BF00DAD2A6 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADFEEAC61B3EC2BF00DAD2A6 /* GeometryUtil.mm */; };
 		BF9CC0161C60B38900BFE006 /* DiceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF9CC0151C60B38900BFE006 /* DiceManager.mm */; };
 		BF9CC0191C60B8AB00BFE006 /* Dice.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF9CC0181C60B8AB00BFE006 /* Dice.mm */; };
+		BF9CC01D1C61129300BFE006 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9CC01C1C61129300BFE006 /* ResultViewController.m */; };
+		BF9CC0201C61148B00BFE006 /* BTN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC01F1C61148B00BFE006 /* BTN@2x.png */; };
+		BF9CC0221C61174800BFE006 /* select-ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0211C61174800BFE006 /* select-ok@2x.png */; };
+		BF9CC0241C61174D00BFE006 /* select-vide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0231C61174D00BFE006 /* select-vide@2x.png */; };
+		BF9CC0261C61191900BFE006 /* img-plage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0251C61191900BFE006 /* img-plage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,12 @@
 		BF9CC0171C60B76900BFE006 /* DiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DiceManager.h; path = Dice/DiceManager.h; sourceTree = "<group>"; };
 		BF9CC0181C60B8AB00BFE006 /* Dice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Dice.mm; path = Dice/Dice.mm; sourceTree = "<group>"; };
 		BF9CC01A1C60B94100BFE006 /* Dice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dice.h; path = Dice/Dice.h; sourceTree = "<group>"; };
+		BF9CC01B1C61123D00BFE006 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		BF9CC01C1C61129300BFE006 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		BF9CC01F1C61148B00BFE006 /* BTN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN@2x.png"; sourceTree = "<group>"; };
+		BF9CC0211C61174800BFE006 /* select-ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-ok@2x.png"; sourceTree = "<group>"; };
+		BF9CC0231C61174D00BFE006 /* select-vide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-vide@2x.png"; sourceTree = "<group>"; };
+		BF9CC0251C61191900BFE006 /* img-plage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-plage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +137,7 @@
 		AD88C59E1B0343C30027B0A1 /* LogoDetector */ = {
 			isa = PBXGroup;
 			children = (
+				BF9CC01E1C61147F00BFE006 /* Assets */,
 				BF9CC0141C60B30100BFE006 /* Dice */,
 				AD88C5A31B0343C30027B0A1 /* AppDelegate.h */,
 				AD88C5A41B0343C30027B0A1 /* AppDelegate.m */,
@@ -156,6 +168,8 @@
 			children = (
 				AD88C5C61B0344A10027B0A1 /* CameraViewController.h */,
 				AD88C5C71B0344A10027B0A1 /* CameraViewController.mm */,
+				BF9CC01B1C61123D00BFE006 /* ResultViewController.h */,
+				BF9CC01C1C61129300BFE006 /* ResultViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +240,17 @@
 			name = Dice;
 			sourceTree = "<group>";
 		};
+		BF9CC01E1C61147F00BFE006 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BF9CC0251C61191900BFE006 /* img-plage@2x.png */,
+				BF9CC0231C61174D00BFE006 /* select-vide@2x.png */,
+				BF9CC0211C61174800BFE006 /* select-ok@2x.png */,
+				BF9CC01F1C61148B00BFE006 /* BTN@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,9 +309,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9CC0221C61174800BFE006 /* select-ok@2x.png in Resources */,
 				AD88C5AB1B0343C30027B0A1 /* Main.storyboard in Resources */,
+				BF9CC0261C61191900BFE006 /* img-plage@2x.png in Resources */,
 				AD88C5B01B0343C30027B0A1 /* LaunchScreen.xib in Resources */,
 				AD88C5AD1B0343C30027B0A1 /* Images.xcassets in Resources */,
+				BF9CC0241C61174D00BFE006 /* select-vide@2x.png in Resources */,
+				BF9CC0201C61148B00BFE006 /* BTN@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +338,7 @@
 				AD9D27FC1B062D060044CDAE /* MLManager.mm in Sources */,
 				AD88C5C81B0344A10027B0A1 /* CameraViewController.mm in Sources */,
 				BF9CC0161C60B38900BFE006 /* DiceManager.mm in Sources */,
+				BF9CC01D1C61129300BFE006 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

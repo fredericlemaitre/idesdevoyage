@@ -18,5 +18,11 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (retain, nonatomic) IBOutlet UIImageView *dice1;
+@property (retain, nonatomic) IBOutlet UIImageView *slot1;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+
+
 
 @end

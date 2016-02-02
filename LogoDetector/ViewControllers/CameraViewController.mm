@@ -74,6 +74,8 @@
     
     //[self test];
     [camera start];
+    
+    [self.loading startAnimating];
 }
 
 - (void) test 
@@ -108,7 +110,22 @@
 
 - (IBAction)btn_TouchUp:(id)sender 
 {
-    started = !started;
+    //started = !started;
+    NSLog(@"touchp");
+    
+}
+
+-(void)showImageForDice1:(int)face {
+    
+    self.slot1.image =[UIImage imageNamed:@"select-ok"];
+    
+    self.dice1.image = [[DiceManager sharedInstance] getDiceImageForFace:face];
+    
+    [self.loading stopAnimating];
+  
+    [self.view setNeedsDisplay];
+    [self.view reloadInputViews];
+    
 }
 
 -(void)processImage:(cv::Mat &)image
@@ -147,11 +164,13 @@
                       {
                           if([[DiceManager sharedInstance] isDice1Detected:feature] )
                           {
-                              NSLog(@"dice 1 detected for face %d", [[DiceManager sharedInstance] getDice1FaceDetected]);
+                              int face =[[DiceManager sharedInstance] getDice1FaceDetected];
+                              NSLog(@"dice 1 detected for face %d", face);
                               bestMser = &mser;
                               cv::Rect bound = cv::boundingRect(*bestMser);
                               lastFound = bound;
                               cv::rectangle(image, bound, GREEN, 3);
+                              [self showImageForDice1:face];
                               
                               
                               //[ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
