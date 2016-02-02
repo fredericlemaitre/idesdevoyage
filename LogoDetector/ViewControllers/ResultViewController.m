@@ -31,7 +31,7 @@
     case 1:
             //plage
             bgToLoad = @"Plage.png";
-            url = @"http://m.sejour.voyages-sncf.com/offre/sejour-ile-maurice/mahebourg/flowers-of-paradise-3-etoiles/id,243768/";
+            url = @"http://m.sejour.voyages-sncf.com/offre/autotour-corse/bastia/autotour-corse-en-liberte---decouverte-de-l-ile-de-beaute/id,401384/";
         break;
     case 2:
             // montagne
@@ -47,13 +47,13 @@
     case 4:
             // nature
             bgToLoad = @"Nature.png";
-            url = @"http://m.sejour.voyages-sncf.com/offre/circuit-canada/montreal/sensations-hivernales/id,273668/";
+            url = @"http://m.sejour.voyages-sncf.com/offre/week-end-thalasso-alpes/week-end-thalasso-la-plagne/hotel-la-tourmaline-3-etoiles--acces-spa/id,584894/";
 
         break;
     case 5:
             //insolite
             bgToLoad = @"Insolite.png";
-            url =@"http://m.sejour.voyages-sncf.com/offre/circuit-norvege/oslo/grand-panorama-des-fjords-3-etoiles/id,508963/";
+            url =@"http://m.sejour.voyages-sncf.com/offre/circuit-maroc/marrakech/circuit-oasis-en-4x4/id,244255/";
 
         break;
     case 6:
