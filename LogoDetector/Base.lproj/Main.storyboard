@@ -115,6 +115,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bg" destination="utg-gA-0Ib" id="DHH-1l-DIO"/>
                         <outlet property="close" destination="bnr-GH-geV" id="uyf-rY-uok"/>
                         <outlet property="dream" destination="gTV-uD-ye5" id="uMH-ci-der"/>
                     </connections>

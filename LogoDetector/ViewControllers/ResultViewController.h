@@ -10,7 +10,7 @@
 
 @interface ResultViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImage *bg;
+@property (weak, nonatomic) IBOutlet UIImageView *bg;
 @property (weak, nonatomic) IBOutlet UIButton *close;
 @property (weak, nonatomic) IBOutlet UIButton *dream;
 

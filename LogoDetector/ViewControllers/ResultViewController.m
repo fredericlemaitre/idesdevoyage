@@ -9,17 +9,80 @@
 #import <Foundation/Foundation.h>
 
 #import "ResultViewController.h"
+#import "DiceManager.h"
+
+@interface ResultViewController()
+{
+    NSString* url;
+}
+
+@end
 
 @implementation ResultViewController
+
+- (void) viewDidLoad
+{
+    
+    NSString* bgToLoad;
+    
+    int face = [[DiceManager sharedInstance] getDice1FaceDetected];
+    
+   switch(face) {
+    case 1:
+            //plage
+            bgToLoad = @"Plage.png";
+            url = @"http://m.sejour.voyages-sncf.com/offre/sejour-ile-maurice/mahebourg/flowers-of-paradise-3-etoiles/id,243768/";
+        break;
+    case 2:
+            // montagne
+            bgToLoad = @"Montagne.png";
+            url = @"http://m.sejour.voyages-sncf.com/offre/circuit-nepal/kathmandou/splendeurs-du-nepal---hiver-15-16/id,565967/";
+        break;
+    case 3:
+            // ville
+            bgToLoad = @"Ville.png";
+            url = @"http://m.sejour.voyages-sncf.com/offre/autotour-etats-unis/new-york/autotour-escapade-urbaine-3-etoiles/id,509903/";
+
+        break;
+    case 4:
+            // nature
+            bgToLoad = @"Nature.png";
+            url = @"http://m.sejour.voyages-sncf.com/offre/circuit-canada/montreal/sensations-hivernales/id,273668/";
+
+        break;
+    case 5:
+            //insolite
+            bgToLoad = @"Insolite.png";
+            url =@"http://m.sejour.voyages-sncf.com/offre/circuit-norvege/oslo/grand-panorama-des-fjords-3-etoiles/id,508963/";
+
+        break;
+    case 6:
+            // au soleil
+            bgToLoad = @"Soleil.png";
+            url = @"http://m.sejour.voyages-sncf.com/offre/autotour-corse/bastia/autotour-corse-en-liberte---decouverte-de-l-ile-de-beaute/id,401384/";
+
+            
+        break;
+    
+    default: return;
+    }
+    
+    if(bgToLoad != nil)
+    {
+        self.bg.image = [UIImage imageNamed:bgToLoad];
+    }
+    
+    [super viewDidLoad];
+    
+}
+
 
 - (IBAction)returnToDices:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)goToBook:(id)sender {
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://m.sejour.voyages-sncf.com/offre/sejour-malte/la-valette/seabank-4-etoiles-sup/id,442240/"]];
-
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 
