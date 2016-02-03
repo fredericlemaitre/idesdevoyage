@@ -40,7 +40,7 @@
     case 2:
             // montagne
             bgToLoad = @"Montagne.png";
-            url = @"http://m.sejour.voyages-sncf.com/offre/circuit-nepal/kathmandou/splendeurs-du-nepal---hiver-15-16/id,565967/";
+            url = @"http://m.sejour.voyages-sncf.com/offre/week-end-thalasso-alpes/week-end-thalasso-la-plagne/hotel-la-tourmaline-3-etoiles--acces-spa/id,584894/";
         break;
     case 3:
             // ville
