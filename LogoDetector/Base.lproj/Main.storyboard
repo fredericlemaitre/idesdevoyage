@@ -118,6 +118,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select-vide.png" translatesAutoresizingMaskIntoConstraints="NO" id="Air-tq-mD1">
                                 <rect key="frame" x="40" y="95" width="240" height="213"/>
                             </imageView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Ajustement du focus..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bAr-Z6-5wZ">
+                                <rect key="frame" x="36" y="70" width="240" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,6 +145,7 @@
                     <connections>
                         <outlet property="btn" destination="UCo-EX-3QG" id="nmD-Sq-693"/>
                         <outlet property="dice1" destination="DIE-AA-SR4" id="CwB-tp-tMK"/>
+                        <outlet property="focus" destination="bAr-Z6-5wZ" id="lGM-b3-5I2"/>
                         <outlet property="img" destination="4Vz-cE-do7" id="cmT-OE-9GZ"/>
                         <outlet property="loading" destination="AT0-FG-GaV" id="91g-4J-CPL"/>
                         <outlet property="loadingView" destination="0xJ-xd-CmC" id="DaR-5a-dLr"/>

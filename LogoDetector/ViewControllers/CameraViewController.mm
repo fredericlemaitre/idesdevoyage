@@ -76,8 +76,9 @@
     self.loadingView.hidden = NO;
     self.subtitleSlot.hidden = YES;
     [self.subtitleSlot sizeToFit];
+    self.focus.hidden = YES;
     
-    //[self disableAutoFocus];
+    [self disableAutoFocus];
     
 }
 
@@ -100,6 +101,10 @@
         BOOL adjustingFocus = [ [change objectForKey:NSKeyValueChangeNewKey] isEqualToNumber:[NSNumber numberWithInt:1] ];
         NSLog(@"Is adjusting focus? %@", adjustingFocus ? @"YES" : @"NO" );
         NSLog(@"Change dictionary: %@", change);
+        
+         dispatch_async(dispatch_get_main_queue(), ^{
+             self.focus.hidden = !adjustingFocus;
+        });
     }
 }
 
@@ -131,10 +136,23 @@
         if (([device hasMediaType:AVMediaTypeVideo]) &&
             ([device position] == AVCaptureDevicePositionBack) ) {
             [device lockForConfiguration:&error];
-            if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
+            /*if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
                 device.focusMode = AVCaptureFocusModeLocked;
                 NSLog(@"Focus locked");
+            }*/
+            
+            if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
+                CGPoint autofocusPoint = CGPointMake(0.5f, 0.5f);
+                [device setFocusPointOfInterest:autofocusPoint];
+                [device setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
             }
+
+            if ([device isExposureModeSupported:AVCaptureExposureModeLocked]) {
+                CGPoint exposurePoint = CGPointMake(0.5f, 0.5f);
+                [device setExposurePointOfInterest:exposurePoint];
+                [device setExposureMode:AVCaptureExposureModeLocked];
+            }
+
             
             [device unlockForConfiguration];
         }

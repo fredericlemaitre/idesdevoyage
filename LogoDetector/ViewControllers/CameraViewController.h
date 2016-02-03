@@ -26,6 +26,7 @@
 
 @property (retain, nonatomic) IBOutlet UITextView *titleSlot;
 @property (retain, nonatomic) IBOutlet UITextView *subtitleSlot;
+@property (retain, nonatomic) IBOutlet UITextView *focus;
 
 
 
