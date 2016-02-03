@@ -25,6 +25,8 @@
 #import "FPS.h"
 #endif
 
+#include "MyCvVideoCamera.h"
+
 //this two values are dependant on defaultAVCaptureSessionPreset
 #define W (480)
 #define H (640)
@@ -36,7 +38,7 @@
 
 @interface CameraViewController()
 {
-    CvVideoCamera *camera;
+    MyCvVideoCamera *camera;
     BOOL started;
     
     cv::Rect lastFound;
@@ -57,7 +59,7 @@
     [_btn setTitle: @" " forState: UIControlStateNormal];
     
     //Camera
-    camera = [[CvVideoCamera alloc] initWithParentView: _img];
+    camera = [[MyCvVideoCamera alloc] initWithParentView: _img];
     camera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     camera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
     camera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
@@ -75,9 +77,41 @@
     self.subtitleSlot.hidden = YES;
     [self.subtitleSlot sizeToFit];
     
-    [self disableAutoFocus];
+    //[self disableAutoFocus];
     
 }
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+// unregister observer
+/*
+- (void)viewWillDisappear:(BOOL)animated{
+    AVCaptureDevice *camDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    [camDevice removeObserver:self forKeyPath:@"adjustingFocus"];
+    
+    [super viewWillDisappear: animated];
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if( [keyPath isEqualToString:@"adjustingFocus"] ){
+        BOOL adjustingFocus = [ [change objectForKey:NSKeyValueChangeNewKey] isEqualToNumber:[NSNumber numberWithInt:1] ];
+        NSLog(@"Is adjusting focus? %@", adjustingFocus ? @"YES" : @"NO" );
+        NSLog(@"Change dictionary: %@", change);
+    }
+}
+
+// register observer
+- (void)viewWillAppear:(BOOL)animated{
+    AVCaptureDevice *camDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    int flags = NSKeyValueObservingOptionNew;
+    [camDevice addObserver:self forKeyPath:@"adjustingFocus" options:flags context:nil];
+    
+    [super viewWillAppear: animated];
+}
+*/
 
 -(void)viewDidAppear:(BOOL)animated
 {

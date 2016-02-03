@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="Mvb-PY-ROf">
             <objects>
-                <viewController id="Sx9-Lv-NKE" sceneMemberID="viewController">
+                <viewController id="Sx9-Lv-NKE" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KrK-Z9-A56"/>
                         <viewControllerLayoutGuide type="bottom" id="6bh-Rv-Mg7"/>
@@ -114,6 +114,9 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-criteres.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxT-mo-xAf">
                                 <rect key="frame" x="0.0" y="419" width="320" height="136"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select-vide.png" translatesAutoresizingMaskIntoConstraints="NO" id="Air-tq-mD1">
+                                <rect key="frame" x="40" y="95" width="240" height="213"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

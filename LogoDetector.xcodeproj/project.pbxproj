@@ -51,6 +51,8 @@
 		BF9CC03A1C611E1A00BFE006 /* BTN-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */; };
 		BF9CC03C1C613ABC00BFE006 /* Ecran-intermediaire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC03B1C613ABC00BFE006 /* Ecran-intermediaire@2x.png */; };
 		BF9CC03E1C613ADD00BFE006 /* Splash-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC03D1C613ADC00BFE006 /* Splash-screen@2x.png */; };
+		BFAA8E3B1C62168900F72D39 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA8E3A1C62168900F72D39 /* StartViewController.m */; };
+		BFAA8E3E1C62177200F72D39 /* MyCvVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA8E3D1C62177200F72D39 /* MyCvVideoCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,10 @@
 		BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN-2@2x.png"; sourceTree = "<group>"; };
 		BF9CC03B1C613ABC00BFE006 /* Ecran-intermediaire@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ecran-intermediaire@2x.png"; sourceTree = "<group>"; };
 		BF9CC03D1C613ADC00BFE006 /* Splash-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-screen@2x.png"; sourceTree = "<group>"; };
+		BFAA8E3A1C62168900F72D39 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		BFAA8E3C1C6216B400F72D39 /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		BFAA8E3D1C62177200F72D39 /* MyCvVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCvVideoCamera.m; sourceTree = "<group>"; };
+		BFAA8E3F1C62179300F72D39 /* MyCvVideoCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCvVideoCamera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,10 @@
 				AD88C5C71B0344A10027B0A1 /* CameraViewController.mm */,
 				BF9CC01B1C61123D00BFE006 /* ResultViewController.h */,
 				BF9CC01C1C61129300BFE006 /* ResultViewController.m */,
+				BFAA8E3A1C62168900F72D39 /* StartViewController.m */,
+				BFAA8E3C1C6216B400F72D39 /* StartViewController.h */,
+				BFAA8E3D1C62177200F72D39 /* MyCvVideoCamera.m */,
+				BFAA8E3F1C62179300F72D39 /* MyCvVideoCamera.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -373,11 +383,13 @@
 				AD88C5A21B0343C30027B0A1 /* main.m in Sources */,
 				ADFEEAC71B3EC2BF00DAD2A6 /* GeometryUtil.mm in Sources */,
 				AD88C5A51B0343C30027B0A1 /* AppDelegate.m in Sources */,
+				BFAA8E3B1C62168900F72D39 /* StartViewController.m in Sources */,
 				AD88C5EA1B03865D0027B0A1 /* RoundButton.m in Sources */,
 				AD9D28001B0647D10044CDAE /* ImageUtils.mm in Sources */,
 				ADF65B541B050A7C00CCB451 /* MSERFeature.mm in Sources */,
 				BF9CC0191C60B8AB00BFE006 /* Dice.mm in Sources */,
 				AD88C5EE1B0393E60027B0A1 /* MSERManager.mm in Sources */,
+				BFAA8E3E1C62177200F72D39 /* MyCvVideoCamera.m in Sources */,
 				ADF03E201B1280AF00115352 /* FPS.mm in Sources */,
 				AD9D27FC1B062D060044CDAE /* MLManager.mm in Sources */,
 				AD88C5C81B0344A10027B0A1 /* CameraViewController.mm in Sources */,

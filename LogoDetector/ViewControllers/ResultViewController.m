@@ -20,6 +20,10 @@
 
 @implementation ResultViewController
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 - (void) viewDidLoad
 {
     
