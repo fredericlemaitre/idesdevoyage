@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD88C59B1B0343C30027B0A1"
-               BuildableName = "LogoDetector.app"
+               BuildableName = "I-De&#x301;s.app"
                BlueprintName = "LogoDetector"
                ReferencedContainer = "container:LogoDetector.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD88C59B1B0343C30027B0A1"
-            BuildableName = "LogoDetector.app"
+            BuildableName = "I-De&#x301;s.app"
             BlueprintName = "LogoDetector"
             ReferencedContainer = "container:LogoDetector.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD88C59B1B0343C30027B0A1"
-            BuildableName = "LogoDetector.app"
+            BuildableName = "I-De&#x301;s.app"
             BlueprintName = "LogoDetector"
             ReferencedContainer = "container:LogoDetector.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD88C59B1B0343C30027B0A1"
-            BuildableName = "LogoDetector.app"
+            BuildableName = "I-De&#x301;s.app"
             BlueprintName = "LogoDetector"
             ReferencedContainer = "container:LogoDetector.xcodeproj">
          </BuildableReference>

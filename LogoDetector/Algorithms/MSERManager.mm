@@ -48,6 +48,11 @@ cv::MserFeatureDetector mserDetector;
         double minMargin = 0.003;       //! ignore too small margin
         int edgeBlurSize = 5;           //! the aperture size for edge blur
 
+        
+        delta = 50;
+        //maxVariation = 0.125;
+        minDiversity = 0.15;
+        
         mserDetector = cv::MserFeatureDetector(
                                                delta, minArea, maxArea, 
                                                maxVariation, minDiversity, maxEvolution, 
@@ -89,8 +94,10 @@ cv::MserFeatureDetector mserDetector;
     double contourArea = [self contourArea: &mserImg];
     if (contourArea == 0.0) return nil;
     result.contourAreaRate = (double)mser->size() / contourArea;
-    if (result.contourAreaRate > 1.0) return nil;
-    
+    if (result.contourAreaRate > 1.0) {
+        result.contourAreaRate = 0.0;
+        //return nil;
+    }
     return result;
 }
 

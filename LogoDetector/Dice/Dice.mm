@@ -34,7 +34,9 @@
     self.msr = [[NSMutableArray alloc] initWithCapacity:6];
     for (int k=1;k<=6; ++k)
     {
+        NSLog(@"extract msr for image %@",[self getPictureForFace:k]);
         [self.msr addObject:[[MLManager sharedInstance] extractMSER:[self getUIImageForFace:k]]];
+        NSLog(@"extract ok");
     }
     
     
@@ -88,7 +90,7 @@
     for(int k=1; k<=6; ++k) {
         BOOL bRet = [self isDetected:feature forFace:k];
         if (bRet) {
-            NSLog(@"dice 1 detected for face %d",k);
+            //NSLog(@"dice 1 detected for face %d",k);
             self.faceDetected = k;
             return YES;
         }

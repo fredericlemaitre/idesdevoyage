@@ -21,9 +21,9 @@
 #import "DiceManager.h"
 #import "ImageUtils.h"
 
-//#ifdef DEBUG
+#ifdef DEBUG
 #import "FPS.h"
-//#endif
+#endif
 
 //this two values are dependant on defaultAVCaptureSessionPreset
 #define W (480)
@@ -31,7 +31,7 @@
 
 //#define OPTIMIZE_FRAME
 #define NB_SKIP_FRAME 4
-#define SHOW_MSR
+//#define SHOW_MSR
 //#define INITIAL_CODE
 
 @interface CameraViewController()
@@ -75,6 +75,8 @@
     self.subtitleSlot.hidden = YES;
     [self.subtitleSlot sizeToFit];
     
+    [self disableAutoFocus];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -87,9 +89,27 @@
     [self.loading startAnimating];
 }
 
-- (void) test 
+-(void)disableAutoFocus
 {
-    UIImage *logo = [UIImage imageNamed: @"toptal logo"];    
+    NSArray *devices = [AVCaptureDevice devices];
+    NSError *error;
+    for (AVCaptureDevice *device in devices) {
+        if (([device hasMediaType:AVMediaTypeVideo]) &&
+            ([device position] == AVCaptureDevicePositionBack) ) {
+            [device lockForConfiguration:&error];
+            if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
+                device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+                NSLog(@"Focus locked");
+            }
+            
+            [device unlockForConfiguration];
+        }
+    }
+}
+
+- (void) test
+{
+    UIImage *logo = [UIImage imageNamed: @"toptal logo"];
     cv::Mat image = [ImageUtils cvMatFromUIImage: logo];
 
     //get gray image
@@ -160,7 +180,12 @@
 
 -(void)processImage:(cv::Mat &)image
 {    
-    if (!started) { [FPS draw: image]; return; }
+    if (!started) {
+#ifdef DEBUG
+        [FPS draw: image];
+#endif
+        return;
+    }
     
 #ifdef OPTIMIZE_FRAME
     ++counterOptimizeFrame;
@@ -177,7 +202,6 @@
     counterOptimizeFrame = 0;
 #endif
     
-#ifndef INITIAL_CODE
     
     // ID
     cv::Mat gray;
@@ -195,7 +219,7 @@
                           if([[DiceManager sharedInstance] isDice1Detected:feature] )
                           {
                               int face =[[DiceManager sharedInstance] getDice1FaceDetected];
-                              NSLog(@"dice 1 detected for face %d", face);
+                              //NSLog(@"dice 1 detected for face %d", face);
                               bestMser = &mser;
                               cv::Rect bound = cv::boundingRect(*bestMser);
                               lastFound = bound;
@@ -207,7 +231,7 @@
                           }
                           else
                           {
-                              [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
+                              //[ImageUtils drawMser: &mser intoImage: &image withColor: RED];
                           }
                           
                       }
@@ -221,12 +245,11 @@
 #if DEBUG
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
     cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
-#endif
     [FPS draw: image];
-
 #endif
     
-    
+
+/*
 #ifdef INITIAL_CODE
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
@@ -289,10 +312,12 @@
 #if DEBUG
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
     cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
-#endif
     
-    [FPS draw: image];
+    [FPS draw: image];#endif
+    
 #endif // INITIAL_CODE
+ */
+    
 }
 
 @end
