@@ -115,9 +115,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-criteres.png" translatesAutoresizingMaskIntoConstraints="NO" id="jxT-mo-xAf">
                                 <rect key="frame" x="0.0" y="419" width="320" height="136"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select-vide.png" translatesAutoresizingMaskIntoConstraints="NO" id="Air-tq-mD1">
-                                <rect key="frame" x="40" y="95" width="240" height="213"/>
-                            </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Ajustement du focus..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bAr-Z6-5wZ">
                                 <rect key="frame" x="36" y="70" width="240" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -125,6 +122,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="Air-tq-mD1">
+                                <rect key="frame" x="79" y="119" width="162" height="177"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -213,6 +213,7 @@
         <image name="Insolite.png" width="320" height="568"/>
         <image name="Retour.png" width="173" height="58"/>
         <image name="bg-criteres.png" width="320" height="195"/>
+        <image name="overlay.png" width="172" height="188"/>
         <image name="select-vide.png" width="79" height="79"/>
     </resources>
 </document>

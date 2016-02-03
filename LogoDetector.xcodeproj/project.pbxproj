@@ -53,6 +53,7 @@
 		BF9CC03E1C613ADD00BFE006 /* Splash-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9CC03D1C613ADC00BFE006 /* Splash-screen@2x.png */; };
 		BFAA8E3B1C62168900F72D39 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA8E3A1C62168900F72D39 /* StartViewController.m */; };
 		BFAA8E3E1C62177200F72D39 /* MyCvVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAA8E3D1C62177200F72D39 /* MyCvVideoCamera.m */; };
+		BFAA8E411C621FA800F72D39 /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAA8E401C621FA800F72D39 /* overlay@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		BFAA8E3C1C6216B400F72D39 /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		BFAA8E3D1C62177200F72D39 /* MyCvVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCvVideoCamera.m; sourceTree = "<group>"; };
 		BFAA8E3F1C62179300F72D39 /* MyCvVideoCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCvVideoCamera.h; sourceTree = "<group>"; };
+		BFAA8E401C621FA800F72D39 /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		BF9CC01E1C61147F00BFE006 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BFAA8E401C621FA800F72D39 /* overlay@2x.png */,
 				BF9CC03D1C613ADC00BFE006 /* Splash-screen@2x.png */,
 				BF9CC03B1C613ABC00BFE006 /* Ecran-intermediaire@2x.png */,
 				BF9CC0391C611E1A00BFE006 /* BTN-2@2x.png */,
@@ -360,6 +363,7 @@
 				BF9CC03E1C613ADD00BFE006 /* Splash-screen@2x.png in Resources */,
 				BF9CC02C1C611DB600BFE006 /* Retour@2x.png in Resources */,
 				BF9CC0381C611DFA00BFE006 /* Ville@2x.png in Resources */,
+				BFAA8E411C621FA800F72D39 /* overlay@2x.png in Resources */,
 				AD88C5AD1B0343C30027B0A1 /* Images.xcassets in Resources */,
 				BF9CC0301C611DE100BFE006 /* Montagne@2x.png in Resources */,
 				BF9CC0241C61174D00BFE006 /* select-vide@2x.png in Resources */,
