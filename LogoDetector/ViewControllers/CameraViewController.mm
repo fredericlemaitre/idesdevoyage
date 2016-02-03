@@ -98,7 +98,7 @@
             ([device position] == AVCaptureDevicePositionBack) ) {
             [device lockForConfiguration:&error];
             if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
-                device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+                device.focusMode = AVCaptureFocusModeLocked;
                 NSLog(@"Focus locked");
             }
             
