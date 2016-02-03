@@ -78,7 +78,7 @@
     [self.subtitleSlot sizeToFit];
     self.focus.hidden = YES;
     
-    [self disableAutoFocus];
+   // [self disableAutoFocus];
     
 }
 
@@ -136,23 +136,23 @@
         if (([device hasMediaType:AVMediaTypeVideo]) &&
             ([device position] == AVCaptureDevicePositionBack) ) {
             [device lockForConfiguration:&error];
-            /*if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
-                device.focusMode = AVCaptureFocusModeLocked;
-                NSLog(@"Focus locked");
-            }*/
             
-            if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
-                CGPoint autofocusPoint = CGPointMake(0.5f, 0.5f);
+            if ([device isFocusModeSupported:AVCaptureFocusModeLocked]) {
+                [device setFocusMode:AVCaptureFocusModeLocked];
+            }
+            
+     /*       if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
+                CGPoint autofocusPoint = CGPointMake(0.5f, 0.4f);
                 [device setFocusPointOfInterest:autofocusPoint];
                 [device setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
             }
 
             if ([device isExposureModeSupported:AVCaptureExposureModeLocked]) {
-                CGPoint exposurePoint = CGPointMake(0.5f, 0.5f);
+                CGPoint exposurePoint = CGPointMake(0.5f, 0.4f);
                 [device setExposurePointOfInterest:exposurePoint];
                 [device setExposureMode:AVCaptureExposureModeLocked];
             }
-
+*/
             
             [device unlockForConfiguration];
         }
